@@ -18,6 +18,26 @@ Try example
 Installation troubleshooting:
    1.Failed to load Fast RTPS shared library
    --安装vcredist_x64.exe
+   
+Check environment variables
+	CMD运行：
+	> call D:\1work\ROS2_soa\ros2-windows\local_setup.bat
+	> set | findstr -i ROS
+	Check that variables like ROS_DISTRO and ROS_VERSION are set. For example:
+	ROS_DISTRO=foxy
+	ROS_LOCALHOST_ONLY=0
+	ROS_PYTHON_VERSION=3
+	ROS_VERSION=2
+
+Add sourcing to your shell startup script
+	Only for PowerShell users, create a folder in ‘My Documents’ called ‘WindowsPowerShell’. Within ‘WindowsPowerShell’, create file ‘Microsoft.PowerShell_profile.ps1’. Inside the file, paste:
+
+	D:\1work\ROS2_soa\ros2-windows\local_setup.ps1
+	PowerShell will request permission to run this script everytime a new shell is opened.
+	
+	未对文件Microsoft.PowerShell_profile.ps1 进行数字签名:
+	set-ExecutionPolicy RemoteSigned
+
 
 1.交换 a, b
   a = a^b^a
